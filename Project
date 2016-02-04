@@ -1,0 +1,48 @@
+package pleshakov123;
+
+public class Project {
+	private String name;
+	private Category category;
+	private String fullDescription;
+	private int account;
+	private int currentAccount;
+	private int days;
+	
+	public Project(String name, String fullDescription, int account, int currentAccount, int days) {
+		super();
+		this.name = name;
+		this.fullDescription = fullDescription;
+		this.account = account;
+		this.currentAccount = currentAccount;
+		this.days = days;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	
+	
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+
+	public String getFullDescription() {
+		return fullDescription;
+	}
+	public int getAccount() {
+		return account;
+	}
+	public int getCurrentAccount() {
+		return currentAccount;
+	}
+	public int getDays() {
+		return days;
+	}
+	
+	
+}
