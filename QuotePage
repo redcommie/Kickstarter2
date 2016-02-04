@@ -1,0 +1,16 @@
+package pleshakov123;
+
+public class QuotePage {
+	private String quote = "Вас приветсвует Кикстартер!";
+	
+	
+	public String getQuote() {
+		return quote;
+	}
+
+
+	public void writeQuote(String quote){
+		Output out = new Output();
+		out.write(quote);
+	}
+}
