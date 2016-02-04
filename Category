@@ -1,0 +1,19 @@
+package pleshakov123;
+
+public class Category {
+	private String name;
+	
+	
+	
+	public String getName() {
+		return name;
+	}
+
+
+	public Category(String name) {
+		super();
+		this.name = name;
+	}
+	
+	
+}
