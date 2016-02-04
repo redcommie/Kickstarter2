@@ -1,0 +1,5 @@
+package pleshakov123;
+
+public interface Outputs {
+	void write(String str);
+}
