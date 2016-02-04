@@ -1,0 +1,57 @@
+package pleshakov123;
+
+import java.util.ArrayList;
+
+public class ListOfProjects {
+	
+
+	public static ArrayList<Project> getListOfProjects(){
+		
+		Project pr1 = new Project("Мстители", "Фильм о супергероях от Марвел", 10000, 0, 90);
+		Project pr2 = new Project("Бетмен", "Фильм про Человека-летучую мышь", 10500, 0, 100);
+		Project pr3 = new Project("Человек-паук", "Фильм про Человека-паука", 11000, 0, 50);
+		Project pr4 = new Project("Змейка", "Классическая игра Змейка", 2000, 0, 20);
+		Project pr5 = new Project("Косынка", "Карточная игра", 1500, 0, 40);
+		Project pr6 = new Project("Сапер", "Угадай где бомба", 1700, 0, 20);
+		Project pr7 = new Project("Pink Floyd", "Британская рок-группа, знаменитая своими философскими текстами", 5000, 0, 100);
+		Project pr8 = new Project("The Doors", "Американская рок-группа, созданная в 1965 году в Лос-Анджелесе", 4000, 0, 80);
+		Project pr9 = new Project("The Who", "Британская рок-группа, сформированная в 1964 году", 4000, 0, 50);
+		
+		ListOfCatigories listOfCatigories = new ListOfCatigories();
+		
+		pr1.setCategory(listOfCatigories.getCat1());
+		pr2.setCategory(listOfCatigories.getCat1());
+		pr3.setCategory(listOfCatigories.getCat1());
+		pr4.setCategory(listOfCatigories.getCat2());
+		pr5.setCategory(listOfCatigories.getCat2());
+		pr6.setCategory(listOfCatigories.getCat2());
+		pr7.setCategory(listOfCatigories.getCat3());
+		pr8.setCategory(listOfCatigories.getCat3());
+		pr9.setCategory(listOfCatigories.getCat3());
+		
+		ArrayList<Project> list = new ArrayList<>();
+		list.add(pr1);
+		list.add(pr2);
+		list.add(pr3);
+		list.add(pr4);
+		list.add(pr5);
+		list.add(pr6);
+		list.add(pr7);
+		list.add(pr8);
+		list.add(pr9);
+		
+		return list;
+	}
+	
+	public static ArrayList<Project> findCategory(int index){
+		
+		Category category = ListOfCatigories.addCategory().get(index);
+		ArrayList<Project> listProject = new ArrayList<>();
+		
+		
+		
+		return listProject; 
+	}
+	
+	
+}
