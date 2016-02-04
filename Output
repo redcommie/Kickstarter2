@@ -1,0 +1,16 @@
+package pleshakov123;
+
+public class Output implements Outputs{
+
+	
+	public Output() {
+		super();
+		
+	}
+
+	public void write(String str) {
+		System.out.println(str);
+		
+	}
+
+}
