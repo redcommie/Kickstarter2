@@ -1,0 +1,33 @@
+package pleshakov123;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		QuotePage quote = new QuotePage();
+		quote.writeQuote(quote.getQuote());
+		
+		Output out = new Output();
+		out.write("");
+		out.write("Выберете категорию:");
+		
+		ListOfCatigories.addCategory();
+		ListOfCatigories.printListOfCatigories(ListOfCatigories.addCategory());
+		try{
+			Scanner sc = new Scanner(System.in);
+			int chose = sc.nextInt();
+		}catch(Exception e){
+	
+		}
+		Scanner sc = new Scanner(System.in);
+		int chose = sc.nextInt();
+		
+		out.write("");
+		out.write("Вы выбрали - " + ListOfCatigories.chosenCategory(chose));
+		
+		
+		
+	}
