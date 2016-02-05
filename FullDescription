@@ -1,0 +1,106 @@
+package pleshakov123;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class FullDescription {
+	private String history;
+	private String videoLink;
+	private String questions;
+	private Project project;
+	
+	
+	
+	public FullDescription() {
+		super();
+	}
+
+	public FullDescription(String history, String videoLink, String questions) {
+		super();
+		this.history = history;
+		this.videoLink = videoLink;
+		this.questions = questions;
+	}
+
+	public String getHistory() {
+		return history;
+	}
+
+	public String getVideoLink() {
+		return videoLink;
+	}
+
+	public String getQuestions() {
+		return questions;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+	
+	
+	public Project getProject() {
+		return project;
+	}
+
+	public static ArrayList<FullDescription> getListOfDescriptions(){
+		FullDescription des1 = new FullDescription("Очень длинное полное описание фильма про Мстителей", "youtube trailer", "questions");
+		FullDescription des2 = new FullDescription("Очень длинное полное описание фильма Бетмена", "youtube trailer", "questions");
+		FullDescription des3 = new FullDescription("Очень длинное полное описание фильма Человека-Паука", "youtube trailer", "questions");
+		FullDescription des4 = new FullDescription("Очень длинное полное описание игры Змейка", "youtube trailer", "questions");
+		FullDescription des5 = new FullDescription("Очень длинное полное описание игры Косынка", "youtube trailer", "questions");
+		FullDescription des6 = new FullDescription("Очень длинное полное описание игры Сапер", "youtube trailer", "questions");
+		FullDescription des7 = new FullDescription("Полная история группы Pink Floyd", "youtube trailer", "questions");
+		FullDescription des8 = new FullDescription("Полная история группы The Doors", "youtube trailer", "questions");
+		FullDescription des9 = new FullDescription("Полная история группы The Who", "youtube trailer", "questions");
+		
+		ArrayList<FullDescription> listOfDescriptions = new ArrayList<>();
+		ArrayList<Project> lisrOfProjects = ListOfProjects.getListOfProjects();
+		
+		listOfDescriptions.add(des1);
+		listOfDescriptions.add(des2);
+		listOfDescriptions.add(des3);
+		listOfDescriptions.add(des4);
+		listOfDescriptions.add(des5);
+		listOfDescriptions.add(des6);
+		listOfDescriptions.add(des7);
+		listOfDescriptions.add(des8);
+		listOfDescriptions.add(des9);
+		
+		for (int i = 0; i < listOfDescriptions.size(); i++) {
+			for (int j = 0; j < lisrOfProjects.size(); j++) {
+				listOfDescriptions.get(i).setProject(lisrOfProjects.get(j));
+			}
+		}
+		return listOfDescriptions;
+	}
+	
+	public static FullDescription findFullDescription(int index){
+		Project project = ListOfProjects.getListOfProjects().get(index-1);
+		ArrayList<FullDescription> desList = getListOfDescriptions();
+		FullDescription description = desList.get(0);
+		for (int i = 0; i < desList.size(); i++) {
+			if(desList.get(i).getProject().equals(project)){
+				description = desList.get(i);
+			}
+		}
+		
+		
+		return description;
+	}
+	
+	
+	public static void printFullDescription(FullDescription description){
+		Output out = new Output();
+		out.write("Название: " + description.getProject().getName());
+		out.write("Описание: " + description.getProject().getDescription());
+		out.write("Сколько нужно денег: " + description.getProject().getAccount());
+		out.write("Сколько собрали: " + description.getProject().getCurrentAccount());
+		out.write("Дней осталось: " + description.getProject().getDays());
+		
+		out.write(description.getHistory());
+		out.write(description.getVideoLink());
+		out.write(description.getQuestions());
+	}
+	
+}
