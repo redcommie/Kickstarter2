@@ -9,25 +9,41 @@ public class Main {
 		
 		QuotePage quote = new QuotePage();
 		quote.writeQuote(quote.getQuote());
-		
+		Scanner sc = new Scanner(System.in);
 		Output out = new Output();
 		out.write("");
 		out.write("Выберете категорию:");
 		
 		ListOfCatigories.addCategory();
 		ListOfCatigories.printListOfCatigories(ListOfCatigories.addCategory());
+		int chose = 0;
 		try{
-			Scanner sc = new Scanner(System.in);
-			int chose = sc.nextInt();
+			chose = sc.nextInt();
 		}catch(Exception e){
 	
 		}
-		Scanner sc = new Scanner(System.in);
-		int chose = sc.nextInt();
 		
 		out.write("");
-		out.write("Вы выбрали - " + ListOfCatigories.chosenCategory(chose));
+		try {
+			out.write("Вы выбрали - " + ListOfCatigories.chosenCategory(chose));
+			ListOfProjects.printProjects(ListOfProjects.findCategory(chose-1));
+			out.write("");
+		} catch (Exception e) {
+			out.write("Нет такой категории");
+		}
 		
 		
+		out.write("");
+		out.write("Выберете проект:");
+		int chose2 = 0;
+		try {
+			chose2 = sc.nextInt();
+		} catch (Exception e) {
+			out.write("Нет такого проекта");
+		}
 		
+		
+		FullDescription.printFullDescription(FullDescription.findFullDescription(chose2));
 	}
+	
+}
