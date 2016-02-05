@@ -62,7 +62,7 @@ public class ListOfProjects {
 		Output out = new Output();
 		for(int i = 0; i < listOfChosenProjects.size(); i++) {
 			out.write(Integer.toString(i + 1));
-			//out.write("Название: " + listOfChosenProjects.get(i).getName());
+			out.write("Название: " + listOfChosenProjects.get(i).getName());
 			out.write("Описание: " + listOfChosenProjects.get(i).getDescription());
 			out.write("Сколько нужно денег: " + listOfChosenProjects.get(i).getAccount() + " долларов");
 			out.write("Сколько собрали: " + listOfChosenProjects.get(i).getCurrentAccount() + " долларов");
