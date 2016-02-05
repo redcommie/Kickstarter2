@@ -2,6 +2,7 @@ package pleshakov123;
 
 import java.util.ArrayList;
 
+
 public class ListOfProjects {
 	
 
@@ -19,7 +20,7 @@ public class ListOfProjects {
 		
 		ListOfCatigories listOfCatigories = new ListOfCatigories();
 		
-		pr1.setCategory(listOfCatigories.getCat1());
+		pr1.setCategory(ListOfCatigories.getCat1());
 		pr2.setCategory(listOfCatigories.getCat1());
 		pr3.setCategory(listOfCatigories.getCat1());
 		pr4.setCategory(listOfCatigories.getCat2());
@@ -46,12 +47,34 @@ public class ListOfProjects {
 	public static ArrayList<Project> findCategory(int index){
 		
 		Category category = ListOfCatigories.addCategory().get(index);
-		ArrayList<Project> listProject = new ArrayList<>();
+		ArrayList<Project> listOfProjects = getListOfProjects();
+		ArrayList<Project> listOfChosenProjects = new ArrayList<>();
+		for(Project project : listOfProjects){
+			if(project.getCategory().equals(category)){
+				listOfChosenProjects.add(project);
+			}
+		}
 		
-		
-		
-		return listProject; 
+		return listOfChosenProjects; 
+	}
+	
+	public static void printProjects(ArrayList<Project> listOfChosenProjects){
+		Output out = new Output();
+		for(int i = 0; i < listOfChosenProjects.size(); i++) {
+			out.write(Integer.toString(i + 1));
+			//out.write("Название: " + listOfChosenProjects.get(i).getName());
+			out.write("Описание: " + listOfChosenProjects.get(i).getDescription());
+			out.write("Сколько нужно денег: " + listOfChosenProjects.get(i).getAccount() + " долларов");
+			out.write("Сколько собрали: " + listOfChosenProjects.get(i).getCurrentAccount() + " долларов");
+			out.write("Дней осталось: " + listOfChosenProjects.get(i).getDays() + " дней");
+			out.write("-----------------------------");
+			out.write("");
+		}	
+		}
 	}
 	
 	
-}
+
+	
+	
+
